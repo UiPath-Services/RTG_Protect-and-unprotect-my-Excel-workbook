@@ -1,0 +1,58 @@
+{
+  "name": "ProtectOrUnprotectExcelFiles",
+  "description": "This automation allows the user to protect an Excel workbook or folder of Excel workbooks with the same password. The automation also allows the user to unprotect an Excel workbook or folder of Excel workbooks by providing the password. ",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.7.2]",
+    "UiPath.Form.Activities": "[1.7.1]",
+    "UiPath.System.Activities": "[19.10.1]",
+    "UiPath.UIAutomation.Activities": "[19.10.1]",
+    "UiPath.WebAPI.Activities": "[1.9.1-preview]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "19.10.1.0",
+  "projectVersion": "1.0.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": true,
+    "mustRestoreAllDependencies": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "c7dd8a92-828c-44b8-8e73-d3e3b147fc68",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}
