@@ -7043,15 +7043,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sai Sushma\\.nuget\\packages\\": {}
+    "C:\\Users\\tuan.nguyen\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Protect Or Unprotect Excel Files",
       "projectName": "Protect Or Unprotect Excel Files",
-      "projectPath": "C:\\Users\\Sai Sushma\\Documents\\UiPath\\Refactor\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local",
-      "packagesPath": "C:\\Users\\Sai Sushma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sai Sushma\\Documents\\UiPath\\Refactor\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local"
+      "projectPath": "C:\\Users\\tuan.nguyen\\Desktop\\R2G In Progress\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local",
+      "packagesPath": "C:\\Users\\tuan.nguyen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tuan.nguyen\\Desktop\\R2G In Progress\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local"
     },
     "frameworks": {
       "net461": {
@@ -7092,7 +7092,7 @@
             "version": "[1.7.0, 1.7.0]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Sai Sushma\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\tuan.nguyen\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
