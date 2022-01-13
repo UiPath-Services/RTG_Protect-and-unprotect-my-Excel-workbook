@@ -10,7 +10,7 @@
   <sap:VirtualizedContainerService.HintSize>1120,1189</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="36">
+    <scg:List x:TypeArguments="x:String" Capacity="72">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -47,10 +47,12 @@
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.UIAutomationNext.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="39">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="78">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -86,10 +88,11 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -152,10 +155,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <FlowDecision.True>
-              <FlowDecision x:Name="__ReferenceID2" DisplayName="File Extension" sap:VirtualizedContainerService.HintSize="78,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                <FlowDecision.Condition>
-                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="io_config(&quot;str_FilePath&quot;).ToString.ToUpper.Contains(&quot;.XLS&quot;)" />
-                </FlowDecision.Condition>
+              <FlowDecision x:Name="__ReferenceID2" Condition="[io_config(&quot;str_FilePath&quot;).ToString.ToUpper.Contains(&quot;.XLS&quot;)]" DisplayName="File Extension" sap:VirtualizedContainerService.HintSize="78,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,21 +187,21 @@
                             <av:PointCollection x:Key="ConnectorLocation">140,651.6 140,681.6 375.4,681.6 375.4,766.4</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Protect" sap:VirtualizedContainerService.HintSize="594,1025" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <Sequence DisplayName="Protect" sap:VirtualizedContainerService.HintSize="1075,1189" sap2010:WorkflowViewState.IdRef="Sequence_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="552,802" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1033,966" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                             <TryCatch.Try>
-                              <Sequence sap:VirtualizedContainerService.HintSize="514,388" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <Sequence sap:VirtualizedContainerService.HintSize="514,552" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uwa:ProgressWindowChangeMessage InterProcessPipeName="{x:Null}" DisplayName="Progress Window Change Message " sap:VirtualizedContainerService.HintSize="472,186" sap2010:WorkflowViewState.IdRef="ProgressWindowChangeMessage_1" Message="Excel is being protected" WindowId="[In_ProgressWindowId]">
+                                <uwa:ProgressWindowChangeMessage InterProcessPipeName="{x:Null}" DisplayName="Progress Window Change Message " sap:VirtualizedContainerService.HintSize="472,186" sap2010:WorkflowViewState.IdRef="ProgressWindowChangeMessage_1" Message="Protecting Excel workbook" WindowId="[In_ProgressWindowId]">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -209,13 +209,16 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </uwa:ProgressWindowChangeMessage>
-                                <bew:SetPassword ExecutionResult="{x:Null}" ModifyPassword="{x:Null}" NewModifyPassword="{x:Null}" ContinueOnError="False" Delay="3" DisplayName="Set Password" FilePath="[io_Config(&quot;str_FilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="472,70" sap2010:WorkflowViewState.IdRef="SetPassword_3" NewPassword="[io_Config(&quot;str_Password&quot;).ToString]" SheetName="EmptySheet">
-                                  <bew:SetPassword.FilePassword>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <Literal x:TypeArguments="x:String" Value="" />
-                                    </InArgument>
-                                  </bew:SetPassword.FilePassword>
-                                </bew:SetPassword>
+                                <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="472,124" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" ReadOnly="True" Visible="False" WorkbookPath="[io_Config(&quot;str_FilePath&quot;).ToString]">
+                                  <ui:ExcelApplicationScope.Body>
+                                    <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                      </ActivityAction.Argument>
+                                    </ActivityAction>
+                                  </ui:ExcelApplicationScope.Body>
+                                </ui:ExcelApplicationScope>
+                                <bew:SetPassword ExecutionResult="{x:Null}" FilePassword="{x:Null}" ModifyPassword="{x:Null}" NewModifyPassword="{x:Null}" ContinueOnError="True" Delay="0" DisplayName="Set Password" FilePath="[io_Config(&quot;str_FilePath&quot;).ToString]" sap:VirtualizedContainerService.HintSize="472,70" sap2010:WorkflowViewState.IdRef="SetPassword_3" NewPassword="[io_Config(&quot;str_Password&quot;).ToString]" SheetName="EmptySheet" />
                               </Sequence>
                             </TryCatch.Try>
                             <TryCatch.Catches>
@@ -235,7 +238,7 @@
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="552,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;The password has been set&quot;]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1033,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;The password has been set&quot;]" />
                         </Sequence>
                         <FlowStep.Next>
                           <FlowDecision x:Name="__ReferenceID0" Condition="[dt_status.rows.count&gt;0]" DisplayName="Failure count&gt; 0" sap:VirtualizedContainerService.HintSize="92,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
@@ -373,7 +376,7 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="file" />
                       </ActivityAction.Argument>
-                      <If Condition="[file.ToString.ToUpper.Contains(&quot;.XLS&quot;)]" sap:VirtualizedContainerService.HintSize="1178.4,1156.8" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If Condition="[file.ToString.ToUpper.Contains(&quot;.XLS&quot;)]" sap:VirtualizedContainerService.HintSize="1185,1311" sap2010:WorkflowViewState.IdRef="If_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -381,7 +384,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
-                          <If Condition="[io_config(&quot;str_ChooseAction&quot;).ToString.Equals(&quot;Protect&quot;)]" sap:VirtualizedContainerService.HintSize="1143.2,968" sap2010:WorkflowViewState.IdRef="If_1">
+                          <If Condition="[io_config(&quot;str_ChooseAction&quot;).ToString.Equals(&quot;Protect&quot;)]" sap:VirtualizedContainerService.HintSize="1149,1124" sap2010:WorkflowViewState.IdRef="If_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -389,7 +392,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="549.6,808.8" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="552,966" sap2010:WorkflowViewState.IdRef="TryCatch_6">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -397,13 +400,13 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <TryCatch.Try>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="512.8,390.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="514,552" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uwa:ProgressWindowChangeMessage InterProcessPipeName="{x:Null}" DisplayName="Progress Window Change Message " sap:VirtualizedContainerService.HintSize="471.2,188" sap2010:WorkflowViewState.IdRef="ProgressWindowChangeMessage_5" Message="Excel is being protected" WindowId="[In_ProgressWindowId]">
+                                    <uwa:ProgressWindowChangeMessage InterProcessPipeName="{x:Null}" DisplayName="Progress Window Change Message " sap:VirtualizedContainerService.HintSize="472,186" sap2010:WorkflowViewState.IdRef="ProgressWindowChangeMessage_5" Message="Excel is being protected" WindowId="[In_ProgressWindowId]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -411,7 +414,16 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </uwa:ProgressWindowChangeMessage>
-                                    <bew:SetPassword ExecutionResult="{x:Null}" ModifyPassword="{x:Null}" NewModifyPassword="{x:Null}" ContinueOnError="False" Delay="3" DisplayName="Set Password" FilePath="[file.ToString]" sap:VirtualizedContainerService.HintSize="471.2,69.6" sap2010:WorkflowViewState.IdRef="SetPassword_7" NewPassword="[io_Config(&quot;str_Password&quot;).ToString]" SheetName="EmptySheet">
+                                    <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="472,124" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" ReadOnly="True" Visible="False" WorkbookPath="[file.ToString]">
+                                      <ui:ExcelApplicationScope.Body>
+                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                          </ActivityAction.Argument>
+                                        </ActivityAction>
+                                      </ui:ExcelApplicationScope.Body>
+                                    </ui:ExcelApplicationScope>
+                                    <bew:SetPassword ExecutionResult="{x:Null}" ModifyPassword="{x:Null}" NewModifyPassword="{x:Null}" ContinueOnError="False" Delay="3" DisplayName="Set Password" FilePath="[file.ToString]" sap:VirtualizedContainerService.HintSize="472,70" sap2010:WorkflowViewState.IdRef="SetPassword_7" NewPassword="[io_Config(&quot;str_Password&quot;).ToString]" SheetName="EmptySheet">
                                       <bew:SetPassword.FilePassword>
                                         <InArgument x:TypeArguments="x:String">
                                           <Literal x:TypeArguments="x:String" Value="" />
@@ -421,7 +433,7 @@
                                   </Sequence>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="516,105.6" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="518,104" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -432,14 +444,14 @@
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                       </ActivityAction.Argument>
-                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{file.ToString,&quot;Failed to Protect&quot;}]" DataTable="[dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{file.ToString,&quot;Failed to Protect&quot;}]" DataTable="[dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
                                     </ActivityAction>
                                   </Catch>
                                 </TryCatch.Catches>
                               </TryCatch>
                             </If.Then>
                             <If.Else>
-                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="549.6,808.8" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="552,802" sap2010:WorkflowViewState.IdRef="TryCatch_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -447,13 +459,13 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <TryCatch.Try>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="512.8,390.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="514,388" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uwa:ProgressWindowChangeMessage InterProcessPipeName="{x:Null}" DisplayName="Progress Window Change Message " sap:VirtualizedContainerService.HintSize="471.2,188" sap2010:WorkflowViewState.IdRef="ProgressWindowChangeMessage_6" Message="Excel is being Unprotected" WindowId="[In_ProgressWindowId]">
+                                    <uwa:ProgressWindowChangeMessage InterProcessPipeName="{x:Null}" DisplayName="Progress Window Change Message " sap:VirtualizedContainerService.HintSize="472,186" sap2010:WorkflowViewState.IdRef="ProgressWindowChangeMessage_6" Message="Excel is being Unprotected" WindowId="[In_ProgressWindowId]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -461,7 +473,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </uwa:ProgressWindowChangeMessage>
-                                    <bew:SetPassword ExecutionResult="{x:Null}" ModifyPassword="{x:Null}" NewModifyPassword="{x:Null}" ContinueOnError="False" Delay="3" DisplayName="Remove Password" FilePassword="[io_Config(&quot;str_Password&quot;).ToString]" FilePath="[file.ToString]" sap:VirtualizedContainerService.HintSize="471.2,69.6" sap2010:WorkflowViewState.IdRef="SetPassword_8" SheetName="EmptySheet">
+                                    <bew:SetPassword ExecutionResult="{x:Null}" ModifyPassword="{x:Null}" NewModifyPassword="{x:Null}" ContinueOnError="False" Delay="3" DisplayName="Remove Password" FilePassword="[io_Config(&quot;str_Password&quot;).ToString]" FilePath="[file.ToString]" sap:VirtualizedContainerService.HintSize="472,70" sap2010:WorkflowViewState.IdRef="SetPassword_8" SheetName="EmptySheet">
                                       <bew:SetPassword.NewPassword>
                                         <InArgument x:TypeArguments="x:String">
                                           <Literal x:TypeArguments="x:String" Value="" />
@@ -471,7 +483,7 @@
                                   </Sequence>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="516,105.6" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="518,104" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -482,7 +494,7 @@
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                       </ActivityAction.Argument>
-                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{file.ToString,&quot;Failed to Unprotect&quot;}]" DataTable="[dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+                                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{file.ToString,&quot;Failed to Unprotect&quot;}]" DataTable="[dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
                                     </ActivityAction>
                                   </Catch>
                                 </TryCatch.Catches>

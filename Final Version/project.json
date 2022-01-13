@@ -1,9 +1,10 @@
 {
-  "name": "Protect Or Unprotect Excel Files",
-  "description": "This automation allows the user to protect an Excel workbook or folder of Excel workbooks with the same password. The automation also allows the user to unprotect an Excel workbook or folder of Excel workbooks by providing the password.",
+  "name": "Protect And Unprotect Excel Workbooks",
+  "description": "This automation protects Excel workbooks with a password or unprotects them using the designated password.",
   "main": "Main.xaml",
   "dependencies": {
     "BalaReva.Excel.Activities": "[2021.0.0]",
+    "UATelemetry": "[1.1.0]",
     "UiPath.Excel.Activities": "[2.10.4]",
     "UiPath.Form.Activities": "[1.5.0]",
     "UiPath.System.Activities": "[21.4.1]",
@@ -15,7 +16,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.8.0.0",
-  "projectVersion": "1.0.0",
+  "projectVersion": "1.0.2",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

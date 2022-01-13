@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pXhHr6UDNg0lZqmFzOh6yiFGMXZJzPSSgceg+VhninTN1ckyNA/ZseWX4s9CG9JfY9G6M2Vdm5d9Ns06w8sMmg==",
+  "dgSpecHash": "S4oWoEHHeNe01MEk/h0pZgEpX+Jr/mp2SPH145WKlFFNzDTA26LBz5dUcU1ER37Ros2tjP3OCfv+Y24JUCkYSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\tuan.nguyen\\Desktop\\R2G In Progress\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local\\",
   "expectedPackageFiles": [
@@ -76,6 +76,7 @@
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\system.threading.tasks.dataflow\\5.0.0\\system.threading.tasks.dataflow.5.0.0.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uatelemetry\\1.1.0\\uatelemetry.1.1.0.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath\\21.4.25.3292\\uipath.21.4.25.3292.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.cefsharpbundle\\1.4.0\\uipath.cefsharpbundle.1.4.0.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.coreipc\\2.0.1\\uipath.coreipc.2.0.1.nupkg.sha512",
@@ -85,10 +86,10 @@
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.formactivitylibrary.contracts\\1.5.0\\uipath.formactivitylibrary.contracts.1.5.0.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.ocr.activities\\3.0.0\\uipath.ocr.activities.3.0.0.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.ocr.contracts\\2.7.3\\uipath.ocr.contracts.2.7.3.nupkg.sha512",
-    "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.platform\\21.4.0\\uipath.platform.21.4.0.nupkg.sha512",
+    "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.platform\\21.10.0\\uipath.platform.21.10.0.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.robot.api\\20.10.6\\uipath.robot.api.20.10.6.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.system.activities\\21.4.1\\uipath.system.activities.21.4.1.nupkg.sha512",
-    "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.telemetry.client\\1.3.18\\uipath.telemetry.client.1.3.18.nupkg.sha512",
+    "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.telemetry.client\\1.5.3\\uipath.telemetry.client.1.5.3.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.uiautomation.activities\\21.4.4\\uipath.uiautomation.activities.21.4.4.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.vision\\3.0.1\\uipath.vision.3.0.1.nupkg.sha512",
     "C:\\Users\\tuan.nguyen\\.nuget\\packages\\uipath.webapi.activities\\1.7.0\\uipath.webapi.activities.1.7.0.nupkg.sha512",
