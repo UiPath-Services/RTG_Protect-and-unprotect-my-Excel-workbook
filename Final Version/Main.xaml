@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1120,1160</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1094,1160</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="47">
@@ -103,7 +103,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="Sai Sushma Vangala - 12/30/2021 - 1.0.0&#xA;&#xA;Protect And Unprotect Excel Workbooks&#xA;&#xA;This automation protects Excel workbooks with a password or unprotects them using the designated password.&#xA;&#xA;This project is developed and tested with following package versions:&#xA;&#xA;    &quot;BalaReva.Excel.Activities&quot;: &quot;[2021.0.0]&quot;,&#xD;&#xA;    &quot;UATelemetry&quot;: &quot;[1.1.0]&quot;,&#xD;&#xA;    &quot;UiPath.Excel.Activities&quot;: &quot;[2.10.4]&quot;,&#xD;&#xA;    &quot;UiPath.Form.Activities&quot;: &quot;[1.5.0]&quot;,&#xD;&#xA;    &quot;UiPath.System.Activities&quot;: &quot;[21.4.1]&quot;,&#xD;&#xA;    &quot;UiPath.UIAutomation.Activities&quot;: &quot;[21.4.4]&quot;,&#xD;&#xA;    &quot;UiPath.WebAPI.Activities&quot;: &quot;[1.7.0]&quot;,&#xD;&#xA;    &quot;UiPath.WPFInteractive.Activities&quot;: &quot;[5.0.1]&quot;" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="693,1095" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID2}" sap2010:Annotation.AnnotationText="Sai Sushma Vangala - 12/30/2021 - 1.0.0&#xA;&#xA;Protect and unprotect my Excel workbook&#xA;&#xA;This automation protects Excel workbooks with a password or unprotects them using the designated password.&#xA;&#xA;This project is developed and tested with following package versions:&#xA;&#xA;    &quot;BalaReva.Excel.Activities&quot;: &quot;[2021.0.0]&quot;,&#xA;    &quot;UATelemetry&quot;: &quot;[1.1.0]&quot;,&#xA;    &quot;UiPath.Excel.Activities&quot;: &quot;[2.10.4]&quot;,&#xA;    &quot;UiPath.Form.Activities&quot;: &quot;[1.5.0]&quot;,&#xA;    &quot;UiPath.System.Activities&quot;: &quot;[21.4.1]&quot;,&#xA;    &quot;UiPath.UIAutomation.Activities&quot;: &quot;[21.4.4]&quot;,&#xA;    &quot;UiPath.WebAPI.Activities&quot;: &quot;[1.7.0]&quot;,&#xA;    &quot;UiPath.WPFInteractive.Activities&quot;: &quot;[5.0.1]&quot;" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="693,1095" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -313,7 +313,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Failed to close applications, so kill processes" sap:VirtualizedContainerService.HintSize="376,337" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                        <Sequence DisplayName="Failed to close applications, so kill processes" sap:VirtualizedContainerService.HintSize="376,335" sap2010:WorkflowViewState.IdRef="Sequence_26">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

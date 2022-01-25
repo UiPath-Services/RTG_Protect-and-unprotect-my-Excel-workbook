@@ -7091,8 +7091,8 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "Protect And Unprotect Excel Workbooks",
-      "projectName": "Protect And Unprotect Excel Workbooks",
+      "projectUniqueName": "Protect And Unprotect My Excel Workbook",
+      "projectName": "Protect And Unprotect My Excel Workbook",
       "projectPath": "C:\\Users\\tuan.nguyen\\Desktop\\R2G In Progress\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local",
       "packagesPath": "C:\\Users\\tuan.nguyen\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\tuan.nguyen\\Desktop\\R2G In Progress\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local"
