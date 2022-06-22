@@ -1,0 +1,421 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SetProcess" this:SetProcess.in_Config="[Nothing]" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ufa="clr-namespace:UiPath.Form.Activities;assembly=UiPath.Form.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_Password" Type="OutArgument(x:String)" />
+    <x:Property Name="out_TransactionIsProtect" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_FormClosed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="io_TransactionData" Type="InOutArgument(scg:List(x:String))" />
+    <x:Property Name="in_ConfigFile" Type="InArgument(x:String)" />
+    <x:Property Name="out_HideFinalSuccessMessage" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1406,5583</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SetProcess_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Form.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Form.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Set Process Form" sap:VirtualizedContainerService.HintSize="1416,5518" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="FormResultsStr" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="FormResultsDict" />
+      <Variable x:TypeArguments="x:Boolean" Name="FilePathProvided" />
+      <Variable x:TypeArguments="x:Boolean" Name="FolderPathProvided" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_NewFormSettings" />
+      <Variable x:TypeArguments="x:String" Name="viewUserGuideLink" />
+      <Variable x:TypeArguments="x:String" Name="selectedButton" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Open Form" sap:VirtualizedContainerService.HintSize="1374,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening settings form&quot;]" />
+    <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" FormFieldsInputData="{x:Null}" FormTitle="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" CreateFormId="0acba5a2-d818-4f5a-9228-a99322b492cf" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="False" Dismissed="[out_FormClosed]" DisplayName="Create Setup Form" FormFieldsOutputData="[FormResultsStr]" FormHeight="800" FormSchema="%[{&quot;tag&quot;:&quot;h2&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;Protect or Unprotect Excel Files&quot;,&quot;key&quot;:&quot;label&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;label&quot;:&quot;View User Guide&quot;,&quot;action&quot;:&quot;custom&quot;,&quot;size&quot;:&quot;sm&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;viewUserGuide&quot;,&quot;properties&quot;:{&quot;viewUserGuideLink&quot;:&quot;true&quot;},&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false,&quot;showUpdateData&quot;:false},{&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;&lt;href src=\&quot;View User Guide\&quot;&gt;&lt;/href&gt;&quot;,&quot;key&quot;:&quot;label1&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;label&quot;:&quot;Select Configuration Type:&quot;,&quot;optionsLabelPosition&quot;:&quot;right&quot;,&quot;inline&quot;:false,&quot;tableView&quot;:false,&quot;values&quot;:[{&quot;label&quot;:&quot;Set to Protected&quot;,&quot;value&quot;:&quot;protected&quot;,&quot;shortcut&quot;:&quot;&quot;},{&quot;label&quot;:&quot;Set to Unprotected&quot;,&quot;value&quot;:&quot;unprotected&quot;,&quot;shortcut&quot;:&quot;&quot;}],&quot;validate&quot;:{&quot;required&quot;:true},&quot;key&quot;:&quot;protectType&quot;,&quot;type&quot;:&quot;radio&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Select Excel File Path&quot;,&quot;customClass&quot;:&quot;filePath&quot;,&quot;showAllFileTypes&quot;:true,&quot;key&quot;:&quot;filePath&quot;,&quot;input&quot;:true,&quot;suffix&quot;:&quot;Select &quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;filePath&quot;},{&quot;label&quot;:&quot;Or Select Excel Folder Path&quot;,&quot;customClass&quot;:&quot;folderPath&quot;,&quot;showAllFileTypes&quot;:true,&quot;key&quot;:&quot;folderPath&quot;,&quot;input&quot;:true,&quot;suffix&quot;:&quot;Select &quot;,&quot;tableView&quot;:true,&quot;type&quot;:&quot;filePath&quot;},{&quot;label&quot;:&quot;Password&quot;,&quot;tableView&quot;:false,&quot;validate&quot;:{&quot;required&quot;:true,&quot;minLength&quot;:4,&quot;maxLength&quot;:20},&quot;errorLabel&quot;:&quot;Please enter a valid password&quot;,&quot;key&quot;:&quot;password&quot;,&quot;type&quot;:&quot;password&quot;,&quot;input&quot;:true,&quot;protected&quot;:true},{&quot;label&quot;:&quot;Check to hide final success message&quot;,&quot;tableView&quot;:false,&quot;defaultValue&quot;:false,&quot;key&quot;:&quot;checkToHideFinalSuccessMessage&quot;,&quot;type&quot;:&quot;checkbox&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Start Process&quot;,&quot;disableOnInvalid&quot;:true,&quot;tableView&quot;:false,&quot;key&quot;:&quot;submit&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;type&quot;:&quot;button&quot;,&quot;input&quot;:true,&quot;isResetData&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;100120&quot;,&quot;Name&quot;:&quot;Default&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/uipath.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/uipath.png&quot;,&quot;OverrideCssUrl&quot;:&quot;../../assets/css/themes/uipath.custom.css&quot;,&quot;UserStyleOverrides&quot;:&quot;&quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:false,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormWidth="800" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="1374,584" sap2010:WorkflowViewState.IdRef="FormActivity_1" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[selectedButton]" StartAsMinimized="False">
+      <ufa:FormActivity.Body>
+        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+          <Sequence sap:VirtualizedContainerService.HintSize="539,458" sap2010:WorkflowViewState.IdRef="Sequence_36">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[selectedButton]" sap:VirtualizedContainerService.HintSize="497,366" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+              <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" x:Key="viewUserGuide" BrowserType="Chrome" ContinueOnError="True" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Url="[in_Config(&quot;User_Guide_URL&quot;).ToString]">
+                <ui:OpenBrowser.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:OpenBrowser.Body>
+              </ui:OpenBrowser>
+            </Switch>
+          </Sequence>
+        </ActivityAction>
+      </ufa:FormActivity.Body>
+      <ufa:FormActivity.DelayBody>
+        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+          <Delay Duration="00:00:00.2500000" sap2010:WorkflowViewState.IdRef="Delay_1" />
+        </ActivityAction>
+      </ufa:FormActivity.DelayBody>
+      <ufa:FormActivity.FormFieldsCollection>
+        <InArgument x:TypeArguments="x:String" x:Key="filePath">[in_Config("Previous_FilePath").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="protectType">[in_Config("Previous_ProtectUnprotect").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="folderPath">[in_Config("Previous_FolderPath").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="checkToHideFinalSuccessMessage">[in_Config("Previous_HideFinalMessage").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="password">[in_Config("Previous_Password").ToString]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="viewUserGuideLink">[viewUserGuideLink]</OutArgument>
+      </ufa:FormActivity.FormFieldsCollection>
+    </ufa:FormActivity>
+    <If Condition="[out_FormClosed = False]" sap:VirtualizedContainerService.HintSize="1374,4671" sap2010:WorkflowViewState.IdRef="If_13">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="953,4513" sap2010:WorkflowViewState.IdRef="Sequence_25">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DeserializeJson x:TypeArguments="scg:Dictionary(x:String, x:String)" DisplayName="Deserialize JSON Results" sap:VirtualizedContainerService.HintSize="911,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[FormResultsDict]" JsonString="[FormResultsStr]" />
+          <If Condition="[FormResultsDict(&quot;protectType&quot;).ToString.Equals(&quot;protected&quot;)]" DisplayName="If Protected or Unprotected" sap:VirtualizedContainerService.HintSize="911,218" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Assign DisplayName="Assign Transaction is protect" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_TransactionIsProtect]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+            </If.Then>
+            <If.Else>
+              <Assign DisplayName="Assign Transaction is Unprotect" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_TransactionIsProtect]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                </Assign.Value>
+              </Assign>
+            </If.Else>
+          </If>
+          <Assign DisplayName="Assign Declare TransactionData" sap:VirtualizedContainerService.HintSize="911,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="scg:List(x:String)">[io_TransactionData]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="scg:List(x:String)">[new List(of String)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If Condition="[FormResultsDict(&quot;filePath&quot;).ToString IsNot &quot;&quot;]" DisplayName="If File is Used" sap:VirtualizedContainerService.HintSize="911,772" sap2010:WorkflowViewState.IdRef="If_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence DisplayName="Sequence FilePath" sap:VirtualizedContainerService.HintSize="767,595" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[FormResultsDict(&quot;filePath&quot;).ToString.Contains(&quot;.xls&quot;) or FormResultsDict(&quot;filePath&quot;).ToString.Contains(&quot;.xlsx&quot;) or FormResultsDict(&quot;filePath&quot;).ToString.Contains(&quot;.xlsm&quot;)]" DisplayName="If xlsx,xls or xlsm" sap:VirtualizedContainerService.HintSize="725,503" sap2010:WorkflowViewState.IdRef="If_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence DisplayName="Sequence Add File to Transactiondata" sap:VirtualizedContainerService.HintSize="376,345" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message Use Filepath" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Using file path&quot;]" />
+                      <Assign DisplayName="Assign File Path Provided" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[FilePathProvided]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <AddToCollection x:TypeArguments="x:String" Collection="[io_TransactionData]" DisplayName="Add File To Collection TransactionData" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[FormResultsDict(&quot;filePath&quot;).ToString]" />
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence DisplayName="Sequence No Filepath" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Assign No Filepath" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[FilePathProvided]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </If.Then>
+          </If>
+          <If Condition="[FormResultsDict(&quot;folderPath&quot;).ToString IsNot &quot;&quot;]" DisplayName="If Folder is Used" sap:VirtualizedContainerService.HintSize="911,998" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Then>
+              <Sequence DisplayName="Sequence Folder Path" sap:VirtualizedContainerService.HintSize="604,840" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message Folder path" sap:VirtualizedContainerService.HintSize="562,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Using folder path&quot;]" />
+                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each in folderpath" sap:VirtualizedContainerService.HintSize="562,617" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Directory.GetFiles(FormResultsDict(&quot;folderPath&quot;).ToString,&quot;*.xlsx&quot;)]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="file" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,483" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If Condition="[file.ToString.Contains(&quot;.xls&quot;) or file.ToString.Contains(&quot;.xlsx&quot;) or file.ToString.Contains(&quot;.xlsxm&quot;)]" DisplayName="If xlsx,xls or xlsm validate" sap:VirtualizedContainerService.HintSize="484,391" sap2010:WorkflowViewState.IdRef="If_7">
+                          <If.Then>
+                            <Sequence DisplayName="Sequence File is supported" sap:VirtualizedContainerService.HintSize="304,214" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <AddToCollection x:TypeArguments="x:String" Collection="[io_TransactionData]" DisplayName="Add To Collection TransactionData" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[file.ToString]" />
+                              <Assign DisplayName="Assign Folder Path Provided" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[FolderPathProvided]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                        </If>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Assign DisplayName="Assign No Folder Path" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[FolderPathProvided]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                </Assign.Value>
+              </Assign>
+            </If.Else>
+          </If>
+          <If Condition="[FilePathProvided = False and FolderPathProvided = False]" DisplayName="If No Folder or File path" sap:VirtualizedContainerService.HintSize="911,218" sap2010:WorkflowViewState.IdRef="If_10">
+            <If.Then>
+              <Throw DisplayName="Throw Invalid Extension" Exception="[New BusinessRuleException(in_Config(&quot;LogMessage_InvalidFile&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+            </If.Then>
+            <If.Else>
+              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="scg:List(x:String)">[io_TransactionData]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="scg:List(x:String)">[io_TransactionData.Distinct().ToList()]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </If.Else>
+          </If>
+          <Assign DisplayName="Assign password" sap:VirtualizedContainerService.HintSize="911,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_Password]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[FormResultsDict("password").ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If Condition="[FormResultsDict(&quot;protectType&quot;).ToString.Equals(&quot;protected&quot;)]" DisplayName="If Protection Type" sap:VirtualizedContainerService.HintSize="911,218" sap2010:WorkflowViewState.IdRef="If_9">
+            <If.Then>
+              <Assign DisplayName="Assign Is Protected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_TransactionIsProtect]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+            </If.Then>
+            <If.Else>
+              <Assign DisplayName="Assign Is Unptotected" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_TransactionIsProtect]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                </Assign.Value>
+              </Assign>
+            </If.Else>
+          </If>
+          <If Condition="[FormResultsDict(&quot;checkToHideFinalSuccessMessage&quot;).ToString.Equals(&quot;false&quot;) or FormResultsDict(&quot;checkToHideFinalSuccessMessage&quot;).ToString.Equals(&quot;&quot;)]" DisplayName="If Final Message Checked" sap:VirtualizedContainerService.HintSize="911,329" sap2010:WorkflowViewState.IdRef="If_11">
+            <If.Then>
+              <Sequence DisplayName="Sequence Assign Final Message" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Assign Show Final Message" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[out_HideFinalSuccessMessage]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+          </If>
+          <If Condition="[io_TransactionData.Count = 0]" DisplayName="If No files found" sap:VirtualizedContainerService.HintSize="911,237" sap2010:WorkflowViewState.IdRef="If_6">
+            <If.Then>
+              <Throw DisplayName="Throw No Files" Exception="[new BusinessRuleException(in_Config(&quot;LogMessage_NoExcelFiles&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+            </If.Then>
+          </If>
+          <Sequence DisplayName="Sequence New Values in Config" sap:VirtualizedContainerService.HintSize="911,851" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:BuildDataTable DataTable="[dt_NewFormSettings]" DisplayName="Build Data Table New Form Settings" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Value&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Previous_ProtectUnprotect&quot;,FormResultsDict(&quot;protectType&quot;).ToString}]" DataTable="[dt_NewFormSettings]" DisplayName="Add Data Row Protect" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Previous_FilePath&quot;,FormResultsDict(&quot;filePath&quot;).ToString}]" DataTable="[dt_NewFormSettings]" DisplayName="Add Data Row File Path" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_8" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Previous_FolderPath&quot;,FormResultsDict(&quot;folderPath&quot;).ToString}]" DataTable="[dt_NewFormSettings]" DisplayName="Add Data Row Folder Path" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_9" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Previous_Password&quot;,FormResultsDict(&quot;password&quot;).ToString}]" DataTable="[dt_NewFormSettings]" DisplayName="Add Data Row Password" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_10" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Previous_HideFinalMessage&quot;,FormResultsDict(&quot;checkToHideFinalSuccessMessage&quot;).ToString}]" DataTable="[dt_NewFormSettings]" DisplayName="Add Data Row Hide Final" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataRow_11" />
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,350" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="[in_ConfigFile]">
+              <ui:ExcelApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,241" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_NewFormSettings]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_3" SheetName="Settings" StartingCell="A8" />
+                    <ui:ExcelSaveWorkbook DisplayName="Save Workbook" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="ExcelSaveWorkbook_2" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ExcelApplicationScope.Body>
+            </ui:ExcelApplicationScope>
+          </Sequence>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Closing Workflow&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
