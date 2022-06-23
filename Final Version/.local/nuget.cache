@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lwQtL2xgz0FOJIqWKIzLpOTSTur333hx4vwouCGCuQqQc4gCXMXJ3hPvNJEpO19Y/tc31qHVZnH3owqbnZYWng==",
+  "dgSpecHash": "esZbsaq4b50Y4fB4c3F/LLfOAlykbJKyIsXjj36tY1WoKFNEnjRdrytSg6VXOLS7Ik9WZnKWm27eLyT6p0o6Ag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ssvr0\\OneDrive\\Documents\\UiPath\\Refactor\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local\\",
+  "projectFilePath": "C:\\Users\\ssvr0\\OneDrive\\Documents\\UiPath\\Refactor\\PreBuilts_Protect-Or-Unprotect-Excel-File\\Final Version\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\ssvr0\\.nuget\\packages\\avalonedit\\6.0.1\\avalonedit.6.0.1.nupkg.sha512",
     "C:\\Users\\ssvr0\\.nuget\\packages\\castle.core\\4.3.1\\castle.core.4.3.1.nupkg.sha512",

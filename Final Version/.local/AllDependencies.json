@@ -8946,9 +8946,9 @@
     "restore": {
       "projectUniqueName": "Protect and unprotect my Excel workbook",
       "projectName": "Protect and unprotect my Excel workbook",
-      "projectPath": "C:\\Users\\ssvr0\\OneDrive\\Documents\\UiPath\\Refactor\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local",
+      "projectPath": "C:\\Users\\ssvr0\\OneDrive\\Documents\\UiPath\\Refactor\\PreBuilts_Protect-Or-Unprotect-Excel-File\\Final Version\\.local",
       "packagesPath": "C:\\Users\\ssvr0\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ssvr0\\OneDrive\\Documents\\UiPath\\Refactor\\PreBuilts_ProtectOrUnprotectExcelFile\\Final Version\\.local"
+      "outputPath": "C:\\Users\\ssvr0\\OneDrive\\Documents\\UiPath\\Refactor\\PreBuilts_Protect-Or-Unprotect-Excel-File\\Final Version\\.local"
     },
     "frameworks": {
       "net461": {

@@ -2,6 +2,16 @@
   "Packages": [
     {
       "Package": {
+        "Id": "Microsoft.Office.Interop.Excel",
+        "Version": "15.0.4795.1001"
+      },
+      "Assemblies": [
+        "C:\\Users\\ssvr0\\.nuget\\packages\\microsoft.office.interop.excel/15.0.4795.1001\\lib/net20/Microsoft.Office.Interop.Excel.dll"
+      ],
+      "Path": "C:\\Users\\ssvr0\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1001"
+    },
+    {
+      "Package": {
         "Id": "UiPath.Credentials.Activities",
         "Version": "1.1.6479.13204"
       },
@@ -293,16 +303,6 @@
         "C:\\Users\\ssvr0\\.nuget\\packages\\xamlanimatedgif/1.2.3\\lib/net45/XamlAnimatedGif.dll"
       ],
       "Path": "C:\\Users\\ssvr0\\.nuget\\packages\\uipath.wpfinteractive.activities\\5.0.1"
-    },
-    {
-      "Package": {
-        "Id": "Microsoft.Office.Interop.Excel",
-        "Version": "15.0.4795.1001"
-      },
-      "Assemblies": [
-        "C:\\Users\\ssvr0\\.nuget\\packages\\microsoft.office.interop.excel/15.0.4795.1001\\lib/net20/Microsoft.Office.Interop.Excel.dll"
-      ],
-      "Path": "C:\\Users\\ssvr0\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1001"
     }
   ],
   "Conflicts": [],
