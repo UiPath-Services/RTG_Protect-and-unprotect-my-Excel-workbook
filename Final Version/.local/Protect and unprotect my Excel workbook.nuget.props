@@ -17,6 +17,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMvvmLight Condition=" '$(PkgMvvmLight)' == '' ">C:\Users\ssvr0\.nuget\packages\mvvmlight\5.4.1.1</PkgMvvmLight>
-    <PkgUiPath_Mail_Activities Condition=" '$(PkgUiPath_Mail_Activities)' == '' ">C:\Users\ssvr0\.nuget\packages\uipath.mail.activities\1.12.3</PkgUiPath_Mail_Activities>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\ssvr0\.nuget\packages\microsoft.codeanalysis.analyzers\3.0.0</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\ssvr0\.nuget\packages\microsoft.web.webview2\1.0.1072.54</PkgMicrosoft_Web_WebView2>
   </PropertyGroup>
 </Project>
