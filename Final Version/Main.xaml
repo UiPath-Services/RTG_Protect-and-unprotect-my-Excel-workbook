@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1380.8,1463.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410.4,1463.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="104">
@@ -135,7 +135,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Parallel sap:VirtualizedContainerService.HintSize="1349.6,1197.6" sap2010:WorkflowViewState.IdRef="Parallel_1">
-      <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="Sai Sushma Vangala - 07/19/2022 - 1.0.0&#xA;&#xA;Protect and unprotect my Excel workbook&#xA;&#xA;This automation protects Excel workbooks with a password or unprotects them using the designated password.&#xA;&#xA;This project is developed and tested with following package versions:&#xA;&#xA;UiPath.Excel.Activities = 2.12.3&#xA;UiPath.Form.Activities = 2.0.0-preview&#xA;UiPath.System.Activities = 22.4.1&#xA;UiPath.UIAutomation.Activities = 22.4.6&#xA;UiPath.WebAPI.Activities = 1.11.1&#xA;UiPath.IPC.Activities = 1.1.0&#xD;&#xA;UiPath.WPFInteractive.Activities = 5.5.0&#xA;[Other packages]&#xA;" DisplayName="Main process" sap:VirtualizedContainerService.HintSize="692.8,1151.2" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+      <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="Sai Sushma Vangala - 07/19/2022 - 2.2.0&#xA;&#xA;Protect and unprotect my Excel workbook&#xA;&#xA;This automation protects Excel workbooks with a password or unprotects them using the designated password.&#xA;&#xA;This project is developed and tested with following package versions:&#xA;&#xA;UiPath.Excel.Activities = 2.12.3&#xA;UiPath.Form.Activities = 2.0.0-preview&#xA;UiPath.System.Activities = 22.4.1&#xA;UiPath.UIAutomation.Activities = 22.4.6&#xA;UiPath.WebAPI.Activities = 1.11.1&#xA;UiPath.IPC.Activities = 1.1.0&#xA;UiPath.WPFInteractive.Activities = 5.5.0&#xA;[Other packages]&#xA;" DisplayName="Main process" sap:VirtualizedContainerService.HintSize="692.8,1151.2" sap2010:WorkflowViewState.IdRef="StateMachine_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
