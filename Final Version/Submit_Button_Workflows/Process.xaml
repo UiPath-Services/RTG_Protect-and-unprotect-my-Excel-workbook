@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1410.4,2491.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410.4,2347.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -92,7 +92,6 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -267,7 +266,7 @@
                                 <av:PointCollection x:Key="ConnectorLocation">150,1120 150,1170</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                            <Assign DisplayName="Assign result on finalform" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
                               </Assign.To>
@@ -289,7 +288,7 @@
                                     <av:Size x:Key="ShapeSize">262.4,60</av:Size>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                <Assign DisplayName="Assign output folder path" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_16">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Object">[io_dict_Config("outputFolderPath")]</OutArgument>
                                   </Assign.To>
@@ -354,7 +353,7 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                        <Assign DisplayName="Assign output folder path" sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_19">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Object">[io_dict_Config("outputFolderPath")]</OutArgument>
                                           </Assign.To>
@@ -392,7 +391,7 @@
                                             <InArgument x:TypeArguments="x:String" x:Key="in_Password">[io_dict_Config("str_Password").ToString]</InArgument>
                                           </ui:InvokeCode.Arguments>
                                         </ui:InvokeCode>
-                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(io_dict_Config(&quot;str_FilePath&quot;).ToString),&quot;Successfully protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(io_dict_Config(&quot;str_FilePath&quot;).ToString),&quot;Successfully protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                                       </Sequence>
                                     </TryCatch.Try>
                                     <TryCatch.Catches>
@@ -407,7 +406,7 @@
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                           </ActivityAction.Argument>
-                                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(io_dict_Config(&quot;str_FilePath&quot;).ToString),&quot;File is already protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(io_dict_Config(&quot;str_FilePath&quot;).ToString),&quot;File is already protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                                         </ActivityAction>
                                       </Catch>
                                     </TryCatch.Catches>
@@ -438,7 +437,7 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                        <Assign DisplayName="Assign output folder path" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_22">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Object">[io_dict_Config("outputFolderPath")]</OutArgument>
                                           </Assign.To>
@@ -465,14 +464,14 @@
                                             <InArgument x:TypeArguments="x:String" x:Key="in_Password">[io_dict_Config("str_Password").ToString]</InArgument>
                                           </ui:InvokeCode.Arguments>
                                         </ui:InvokeCode>
-                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(io_dict_Config(&quot;str_FilePath&quot;).ToString),&quot;Successfully unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(io_dict_Config(&quot;str_FilePath&quot;).ToString),&quot;Successfully unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
                                       </Sequence>
                                     </TryCatch.Try>
                                     <TryCatch.Catches>
                                       <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,258.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -480,7 +479,7 @@
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                           </ActivityAction.Argument>
-                                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(io_dict_Config(&quot;str_FilePath&quot;).ToString),&quot;File is already unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(io_dict_Config(&quot;str_FilePath&quot;).ToString),&quot;File is already unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
                                         </ActivityAction>
                                       </Catch>
                                     </TryCatch.Catches>
@@ -543,7 +542,7 @@
                                 <av:PointCollection x:Key="ConnectorLocation">660,1000 660,1050</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                            <Assign DisplayName="Assign result on finalform" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
                               </Assign.To>
@@ -565,7 +564,7 @@
                                     <av:Size x:Key="ShapeSize">262.4,60</av:Size>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                <Assign DisplayName="Assign output folder path" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Object">[io_dict_Config("outputFolderPath")]</OutArgument>
                                   </Assign.To>
@@ -593,7 +592,7 @@
                             <av:PointCollection x:Key="ConnectorLocation">1170,760 1170,810</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                        <Assign DisplayName="Assign result on finalform" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
                           </Assign.To>
@@ -615,7 +614,7 @@
                                 <av:PointCollection x:Key="ConnectorLocation">1170,870 1170,936.4</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+                            <Assign DisplayName="Assign output folder path" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_44">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Object">[io_dict_Config("outputFolderPath")]</OutArgument>
                               </Assign.To>
@@ -707,7 +706,7 @@
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <Assign sap2010:Annotation.AnnotationText="Use resultFormMessage to build the message that will appear in the Result Form after a successful transaction." sap:VirtualizedContainerService.HintSize="433.6,120" sap2010:WorkflowViewState.IdRef="Assign_40">
+                                                                <Assign sap2010:Annotation.AnnotationText="Use resultFormMessage to build the message that will appear in the Result Form after a successful transaction." DisplayName="Assign result on finalform" sap:VirtualizedContainerService.HintSize="433.6,120" sap2010:WorkflowViewState.IdRef="Assign_40">
                                                                   <Assign.To>
                                                                     <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
                                                                   </Assign.To>
@@ -750,14 +749,14 @@
                                                                     <InArgument x:TypeArguments="x:String" x:Key="in_Password">[io_dict_Config("str_Password").ToString]</InArgument>
                                                                   </ui:InvokeCode.Arguments>
                                                                 </ui:InvokeCode>
-                                                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;Successfully protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_13" />
+                                                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;Successfully protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_13" />
                                                               </Sequence>
                                                             </TryCatch.Try>
                                                             <TryCatch.Catches>
                                                               <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="478.4,258.4" sap2010:WorkflowViewState.IdRef="Catch`1_7">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
@@ -765,7 +764,7 @@
                                                                   <ActivityAction.Argument>
                                                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                                   </ActivityAction.Argument>
-                                                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;File is already protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_14" />
+                                                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;File is already protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_14" />
                                                                 </ActivityAction>
                                                               </Catch>
                                                             </TryCatch.Catches>
@@ -786,7 +785,7 @@
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <Assign sap2010:Annotation.AnnotationText="Use resultFormMessage to build the message that will appear in the Result Form after a successful transaction." sap:VirtualizedContainerService.HintSize="333.6,120" sap2010:WorkflowViewState.IdRef="Assign_41">
+                                                                <Assign sap2010:Annotation.AnnotationText="Use resultFormMessage to build the message that will appear in the Result Form after a successful transaction." DisplayName="Assign result on finalform" sap:VirtualizedContainerService.HintSize="333.6,120" sap2010:WorkflowViewState.IdRef="Assign_41">
                                                                   <Assign.To>
                                                                     <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
                                                                   </Assign.To>
@@ -813,14 +812,14 @@
                                                                     <InArgument x:TypeArguments="x:String" x:Key="in_Password">[io_dict_Config("str_Password").ToString]</InArgument>
                                                                   </ui:InvokeCode.Arguments>
                                                                 </ui:InvokeCode>
-                                                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;Successfully unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_15" />
+                                                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;Successfully unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_15" />
                                                               </Sequence>
                                                             </TryCatch.Try>
                                                             <TryCatch.Catches>
                                                               <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,258.4" sap2010:WorkflowViewState.IdRef="Catch`1_8">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
@@ -828,7 +827,7 @@
                                                                   <ActivityAction.Argument>
                                                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                                   </ActivityAction.Argument>
-                                                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;File is already unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_16" />
+                                                                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;File is already unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_16" />
                                                                 </ActivityAction>
                                                               </Catch>
                                                             </TryCatch.Catches>
@@ -858,7 +857,7 @@
                                             <av:Size x:Key="ShapeSize">200,52.8</av:Size>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each folder" sap:VirtualizedContainerService.HintSize="1063.2,2238.4" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Directory.GetFiles(io_dict_Config(&quot;str_FolderPath&quot;).ToString)]">
+                                        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each folder" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[Directory.GetFiles(io_dict_Config(&quot;str_FolderPath&quot;).ToString)]">
                                           <ui:ForEach.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
@@ -894,7 +893,7 @@
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Assign sap2010:Annotation.AnnotationText="Use resultFormMessage to build the message that will appear in the Result Form after a successful transaction." sap:VirtualizedContainerService.HintSize="433.6,120" sap2010:WorkflowViewState.IdRef="Assign_42">
+                                                            <Assign sap2010:Annotation.AnnotationText="Use resultFormMessage to build the message that will appear in the Result Form after a successful transaction." DisplayName="Assign result on finalform" sap:VirtualizedContainerService.HintSize="433.6,120" sap2010:WorkflowViewState.IdRef="Assign_42">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
                                                               </Assign.To>
@@ -937,7 +936,7 @@
                                                                 <InArgument x:TypeArguments="x:String" x:Key="in_Password">[io_dict_Config("str_Password").ToString]</InArgument>
                                                               </ui:InvokeCode.Arguments>
                                                             </ui:InvokeCode>
-                                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;Successfully protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_9" />
+                                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;Successfully protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_9" />
                                                           </Sequence>
                                                         </TryCatch.Try>
                                                         <TryCatch.Catches>
@@ -952,7 +951,7 @@
                                                               <ActivityAction.Argument>
                                                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                               </ActivityAction.Argument>
-                                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;File is already protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_10" />
+                                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;File is already protected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_10" />
                                                             </ActivityAction>
                                                           </Catch>
                                                         </TryCatch.Catches>
@@ -973,7 +972,7 @@
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Assign sap2010:Annotation.AnnotationText="Use resultFormMessage to build the message that will appear in the Result Form after a successful transaction." sap:VirtualizedContainerService.HintSize="333.6,120" sap2010:WorkflowViewState.IdRef="Assign_43">
+                                                            <Assign sap2010:Annotation.AnnotationText="Use resultFormMessage to build the message that will appear in the Result Form after a successful transaction." DisplayName="Assign result on finalform" sap:VirtualizedContainerService.HintSize="333.6,120" sap2010:WorkflowViewState.IdRef="Assign_43">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
                                                               </Assign.To>
@@ -1000,7 +999,7 @@
                                                                 <InArgument x:TypeArguments="x:String" x:Key="in_Password">[io_dict_Config("str_Password").ToString]</InArgument>
                                                               </ui:InvokeCode.Arguments>
                                                             </ui:InvokeCode>
-                                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;Successfully unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_11" />
+                                                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;Successfully unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_11" />
                                                           </Sequence>
                                                         </TryCatch.Try>
                                                         <TryCatch.Catches>
@@ -1015,7 +1014,7 @@
                                                               <ActivityAction.Argument>
                                                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                               </ActivityAction.Argument>
-                                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;File is already unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_12" />
+                                                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Path.GetFilename(file.ToString),&quot;File is already unprotected&quot;}]" DataTable="[out_dt_status]" DisplayName="Add Data Row for final form display" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_12" />
                                                             </ActivityAction>
                                                           </Catch>
                                                         </TryCatch.Catches>
@@ -1069,7 +1068,7 @@
                         <av:PointCollection x:Key="ConnectorLocation">1060,340 1060,390</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign DisplayName="Assign result on finalform" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[io_dict_Config("resultFormMessage")]</OutArgument>
                       </Assign.To>

@@ -88,7 +88,6 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="This workflow displays the Results Form when a successful execution occurs. The ResultFormMessage value will be displayed in the Form and the user will have the option of repeating the automation. If " DisplayName="Display Result Form after a successful execution" sap:VirtualizedContainerService.HintSize="2349.6,885.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -103,7 +102,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <If Condition="[string.IsNullOrEmpty(io_dict_Config(&quot;outputFolderPath&quot;).tostring)]" sap:VirtualizedContainerService.HintSize="2308,761.6" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <If Condition="[in_dt_status.rows.count&gt;0]" sap:VirtualizedContainerService.HintSize="1111.2,509.6" sap2010:WorkflowViewState.IdRef="If_4">
+        <If Condition="[in_dt_status.rows.count&gt;0]" DisplayName="output folder path empty" sap:VirtualizedContainerService.HintSize="1111.2,509.6" sap2010:WorkflowViewState.IdRef="If_4">
           <If.Then>
             <ufa:FormActivity CreateFormActivityFileName="{x:Null}" CreateFormActivityFilePath="{x:Null}" Dismissed="{x:Null}" FormFieldsInputData="{x:Null}" FormFieldsOutputData="{x:Null}" IconPath="{x:Null}" LocalCSSFilePath="{x:Null}" TimeoutInSeconds="{x:Null}" WindowPositionLeft="{x:Null}" WindowPositionTop="{x:Null}" sap2010:Annotation.AnnotationText="The showViewOutput property determines whether the &quot;View Output&quot; button is visible. If enabled, the button will open a File Explorer to the folderpath designated in the outputFolderPath property from the Config." CreateFormId="86ccd1c5-64b4-4b74-857c-52f20d9aff7f" DevTools="False" DisableMaximizeButton="False" DisableMinimizeButton="False" DisableSanitize="True" DisplayName="Display Success Form" EnableAccessibility="False" FormHeight="800" FormSchema="%[{&quot;tag&quot;:&quot;h2&quot;,&quot;refreshOnChange&quot;:true,&quot;content&quot;:&quot;{{data.logF_BusinessProcessName}}&quot;,&quot;key&quot;:&quot;automation_name&quot;,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;label&quot;:&quot;Label&quot;,&quot;type&quot;:&quot;label&quot;},{&quot;label&quot;:&quot;Text Area&quot;,&quot;placeholder&quot;:&quot;Placeholder text for the final message&quot;,&quot;hideLabel&quot;:true,&quot;disabled&quot;:true,&quot;tableView&quot;:false,&quot;key&quot;:&quot;resultFormMessage&quot;,&quot;type&quot;:&quot;textarea&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Database&quot;,&quot;labelPosition&quot;:&quot;bottom&quot;,&quot;disableAddingRemovingRows&quot;:true,&quot;reorder&quot;:false,&quot;addAnotherPosition&quot;:&quot;bottom&quot;,&quot;layoutFixed&quot;:false,&quot;enableRowGroups&quot;:false,&quot;initEmpty&quot;:false,&quot;hideLabel&quot;:true,&quot;key&quot;:&quot;Grid&quot;,&quot;type&quot;:&quot;datagrid&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false,&quot;components&quot;:[{&quot;label&quot;:&quot;File path&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;validate&quot;:{&quot;maxLength&quot;:300,&quot;maxWords&quot;:300},&quot;key&quot;:&quot;FilePath&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true},{&quot;label&quot;:&quot;Status&quot;,&quot;disabled&quot;:true,&quot;tableView&quot;:true,&quot;key&quot;:&quot;Status&quot;,&quot;type&quot;:&quot;textfield&quot;,&quot;input&quot;:true}]},{&quot;label&quot;:&quot;Table&quot;,&quot;cellAlignment&quot;:&quot;right&quot;,&quot;key&quot;:&quot;table&quot;,&quot;type&quot;:&quot;table&quot;,&quot;numRows&quot;:1,&quot;input&quot;:false,&quot;tableView&quot;:false,&quot;rows&quot;:[[{&quot;components&quot;:[]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Repeat process&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;repeatProcess&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false}]},{&quot;components&quot;:[{&quot;label&quot;:&quot;Close&quot;,&quot;tableView&quot;:false,&quot;key&quot;:&quot;close&quot;,&quot;custom&quot;:&quot;instance.emit('executeDoBlock', instance.component);&quot;,&quot;input&quot;:true,&quot;type&quot;:&quot;button&quot;,&quot;isResetData&quot;:false,&quot;hideOnChildrenHidden&quot;:false}]}]]},{&quot;label&quot;:&quot;Hidden View Output Button Flag&quot;,&quot;key&quot;:&quot;showViewOutput&quot;,&quot;type&quot;:&quot;hidden&quot;,&quot;input&quot;:true,&quot;tableView&quot;:false}]" FormTheme="{}{&quot;Activities&quot;:[&quot;FORMS&quot;],&quot;Id&quot;:&quot;1631051696535&quot;,&quot;Name&quot;:&quot;Form&quot;,&quot;BaseCss&quot;:&quot;../../assets/css/themes/united.bootstrap.min.css&quot;,&quot;ImageSrc&quot;:&quot;../../assets/themeicons/united.png&quot;,&quot;OverrideCssUrl&quot;:&quot;&quot;,&quot;UserStyleOverrides&quot;:&quot;body , h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\n                      font-family : Arial !important;\n                    }table, .btn, .form-control {\n                      font-size : 15px !important;\n                     }h1 {\n                      font-size : 37px !important;\n                    }h2 {\n                      font-size : 31px !important;\n                    }h3 {\n                      font-size : 25px !important;\n                    }h4 {\n                      font-size : 19px !important;\n                    }h5 {\n                      font-size : 15px !important;\n                    }h6 {\n                      font-size : 13px !important;\n                    }body {\n      background:  #ffffff !important;\n      font-size : 15px !important;\n      font-family : Arial !important;\n      color : #333333 !important\n    } .panel-default {\n                        background:   !important;\n                        border-color :   !important;\n                      }\n                 .panel-default &gt; .panel-heading {\n                        background-color:  !important;\n                        color : #333333 !important\n                      }.btn-primary {\n                          background:  #0061d3 !important;\n                          border-color:  #0061d3 !important;\n                          color:  #ffffff !important;\n                      } .btn-primary:hover {\n                          background:  #0061d3 !important;\n                          color:  #ffffff !important;\n                      } .btn-default {\n                        background:   !important;\n                        border-color:   !important;\n                        color:   !important;\n                      } .btn-default:hover {\n                        background:   !important;\n                        color:   !important;\n                      } &quot;,&quot;Properties&quot;:&quot;&quot;,&quot;IsCustomTheme&quot;:true,&quot;Version&quot;:1,&quot;ThemeVersion&quot;:1}" FormTitle="[io_dict_Config(&quot;formTitle&quot;).ToString]" FormWidth="800" GenerateInputFields="False" sap:VirtualizedContainerService.HintSize="533.6,350.4" sap2010:WorkflowViewState.IdRef="FormActivity_5" IsReadOnly="False" MaxColumnsForSchemaGeneration="6" RunDoBlockFirst="False" RunInIsolatedMode="False" SelectedButton="[str_selectedButton]" StartAsMinimized="False">
               <ufa:FormActivity.Body>
@@ -202,7 +201,7 @@
         </If>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="1152.8,602.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="output folder path not empty" sap:VirtualizedContainerService.HintSize="1152.8,602.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -249,18 +248,10 @@
                   </ActivityAction>
                 </ufa:FormActivity.DelayBody>
                 <ufa:FormActivity.FormFieldsCollection>
-                  <InArgument x:TypeArguments="x:String" x:Key="resultFormMessage">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_dict_Config(&quot;resultFormMessage&quot;).ToString" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="logF_BusinessProcessName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_dict_Config(&quot;logF_BusinessProcessName&quot;).ToString" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Boolean" x:Key="showViewOutput">
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Convert.ToBoolean(io_dict_Config(&quot;showViewOutput&quot;))" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Grid">
-                    <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_dt_status" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="resultFormMessage">[io_dict_Config("resultFormMessage").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="logF_BusinessProcessName">[io_dict_Config("logF_BusinessProcessName").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="showViewOutput">[Convert.ToBoolean(io_dict_Config("showViewOutput"))]</InArgument>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Grid">[in_dt_status]</InArgument>
                 </ufa:FormActivity.FormFieldsCollection>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -309,15 +300,9 @@
                   </ActivityAction>
                 </ufa:FormActivity.DelayBody>
                 <ufa:FormActivity.FormFieldsCollection>
-                  <InArgument x:TypeArguments="x:String" x:Key="resultFormMessage">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_dict_Config(&quot;resultFormMessage&quot;).ToString" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="logF_BusinessProcessName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_dict_Config(&quot;logF_BusinessProcessName&quot;).ToString" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Boolean" x:Key="showViewOutput">
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Convert.ToBoolean(io_dict_Config(&quot;showViewOutput&quot;))" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="resultFormMessage">[io_dict_Config("resultFormMessage").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="logF_BusinessProcessName">[io_dict_Config("logF_BusinessProcessName").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="showViewOutput">[Convert.ToBoolean(io_dict_Config("showViewOutput"))]</InArgument>
                 </ufa:FormActivity.FormFieldsCollection>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
