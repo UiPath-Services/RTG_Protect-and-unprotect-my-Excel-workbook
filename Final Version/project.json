@@ -4,18 +4,17 @@
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.12.3]",
-    "UiPath.Form.Activities": "[2.0.1-preview]",
+    "UiPath.Form.Activities": "2.0.2-preview",
     "UiPath.IPC.Activities": "[1.1.0]",
     "UiPath.System.Activities": "[22.4.1]",
     "UiPath.UIAutomation.Activities": "[22.4.6]",
-    "UiPath.WebAPI.Activities": "[1.11.1]",
-    "UiPath.WPFInteractive.Activities": "[5.5.0]"
+    "UiPath.WebAPI.Activities": "[1.11.1]"
   },
   "webServices": [],
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.8.0.0",
-  "projectVersion": "2.2.0",
+  "projectVersion": "2.0.0",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -28,7 +27,7 @@
       "*password*"
     ],
     "executionType": "Workflow",
-    "readyForPiP": false,
+    "readyForPiP": true,
     "startsInPiP": false,
     "mustRestoreAllDependencies": true
   },

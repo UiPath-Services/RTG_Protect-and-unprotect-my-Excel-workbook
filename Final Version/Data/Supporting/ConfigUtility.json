@@ -1,6 +1,29 @@
 {
-  "formDefaultsGrid": [],
-  "exceptionsGrid": [],
+  "resetAllValues": false,
+  "formDefaultsGrid": [
+    {
+      "formDefaultsFieldKey": "str_FilePath",
+      "formDefaultsGridValue": "",
+      "formDefaultsGridDescription": "Clear filepath if user selects to protect/unprotect a single file"
+    }
+  ],
+  "exceptionsGrid": [
+    {
+      "exceptionsGridFieldKey": "passwordMismatch",
+      "exceptionsGridValue": "The provided password and confirmed password do not match. Please try again.",
+      "exceptionsGridDescription": "Provided password and confirmed password do not match."
+    },
+    {
+      "exceptionsGridFieldKey": "noExcelFiles",
+      "exceptionsGridValue": "No Excel workbooks were found in the designated folder. Please double check your folder or choose another folder.",
+      "exceptionsGridDescription": "No Excel workbooks were found."
+    },
+    {
+      "exceptionsGridFieldKey": "invalidPassword",
+      "exceptionsGridValue": "The password to unprotect the workbook was invalid. Please confirm the password is correct.",
+      "exceptionsGridDescription": "The password to unprotect the workbook was invalid."
+    }
+  ],
   "settingsGrid": [
     {
       "settingsGridFieldKey": "logF_BusinessProcessName",
@@ -102,5 +125,6 @@
   ],
   "assetsGrid": [],
   "cancel": false,
+  "save": true,
   "submit": true
 }
